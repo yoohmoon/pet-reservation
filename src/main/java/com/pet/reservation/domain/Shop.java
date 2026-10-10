@@ -1,11 +1,13 @@
 package com.pet.reservation.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
+@Getter
 public class Shop {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

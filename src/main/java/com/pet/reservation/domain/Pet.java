@@ -1,12 +1,14 @@
 package com.pet.reservation.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
 public class Pet {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

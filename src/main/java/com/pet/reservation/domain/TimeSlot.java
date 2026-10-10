@@ -1,12 +1,14 @@
 package com.pet.reservation.domain;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Entity
+@Getter
 public class TimeSlot {
 
     @Id
@@ -33,4 +35,8 @@ public class TimeSlot {
     private Integer version;
 
     private LocalDateTime createdAt;
+
+    public void reserve(){
+        this.isAvailable = false;
+    }
 }
