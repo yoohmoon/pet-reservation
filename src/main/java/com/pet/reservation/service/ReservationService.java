@@ -45,4 +45,26 @@ public class ReservationService {
         return reservation.getId();
     }
 
+    @Transactional
+    public void confirmReservation(Long reservationId){
+        Reservation reservation = reservationRepository.findById(reservationId)
+                .orElseThrow(()-> new IllegalArgumentException("예약을 찾을 수 없습니다."));
+        reservation.confirm();
+
+    }
+
+    @Transactional
+    public void completeReservation(Long reservationId){
+        Reservation reservation = reservationRepository.findById(reservationId)
+                .orElseThrow(()-> new IllegalArgumentException("예약을 찾을 수 없습니다."));
+        reservation.complete();
+    }
+
+    @Transactional
+    public void cancelReservation(Long reservationId, String reason){
+        Reservation reservation = reservationRepository.findById(reservationId)
+                .orElseThrow(() -> new IllegalArgumentException("예약을 찾을 수 없습니다."));
+        reservation.cancel(reason);
+    }
+
 }
