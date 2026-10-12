@@ -1,6 +1,5 @@
 package com.pet.reservation.dto;
 
-import com.pet.reservation.domain.Member;
 import lombok.Getter;
 
 import java.math.BigDecimal;

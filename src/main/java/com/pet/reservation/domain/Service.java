@@ -28,4 +28,16 @@ public class Service {
     private Integer price;
 
     private LocalDateTime createdAt;
+
+    public static Service createService(Shop shop, String name, String description,
+                                        Integer duration, Integer price){
+        Service service = new Service();
+        service.shop = shop;
+        service.name = name;
+        service.description = description;
+        service.duration = duration;
+        service.price = price;
+
+        return service;
+    }
 }
