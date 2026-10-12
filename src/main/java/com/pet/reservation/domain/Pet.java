@@ -37,4 +37,18 @@ public class Pet {
 
     private LocalDateTime createdAt;
 
+    public static Pet createPet(Member member, String name,
+                                String species,  String breed,
+                                BigDecimal weight
+    ,LocalDate birthDate, String specialNotes){
+        Pet pet = new Pet();
+        pet.member = member;
+        pet.name = name;
+        pet.species = species;
+        pet.breed = breed;
+        pet.weight = weight;
+        pet.birthDate = birthDate;
+        pet.specialNotes= specialNotes;
+        return pet;
+    }
 }

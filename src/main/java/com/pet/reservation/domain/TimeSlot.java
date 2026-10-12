@@ -39,4 +39,17 @@ public class TimeSlot {
     public void reserve(){
         this.isAvailable = false;
     }
+
+    public static TimeSlot createTimeSlot(Shop shop, LocalDate slotDate,
+                                          LocalTime startTime,
+                                          LocalTime endTime){
+
+        TimeSlot timeSlot = new TimeSlot();
+        timeSlot.shop = shop;
+        timeSlot.slotDate = slotDate;
+        timeSlot.startTime = startTime;
+        timeSlot.endTime = endTime;
+        timeSlot.isAvailable = true;
+        return timeSlot;
+    }
 }
