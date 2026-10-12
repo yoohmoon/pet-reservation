@@ -36,4 +36,17 @@ public class Shop {
     private String closedDays;
 
     private LocalDateTime createdAt;
+
+    public static Shop createShop(Member owner, String name, String phone, String address, String description, LocalTime openTime, LocalTime closeTime, String closedDays){
+        Shop shop = new Shop();
+        shop.owner = owner;
+        shop.name = name;
+        shop.phone = phone;
+        shop.address = address;
+        shop.description = description;
+        shop.openTime = openTime;
+        shop.closeTime = closeTime;
+        shop.closedDays = closedDays;
+        return shop;
+    }
 }

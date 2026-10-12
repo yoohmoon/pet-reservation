@@ -33,4 +33,14 @@ public class Member {
 
     private LocalDateTime updatedAt;
 
+    public static Member createMember(String email, String password, String name, String phone, MemberRole role){
+        Member member = new Member();
+        member.email = email;
+        member.password = password;
+        member.name = name;
+        member.phone = phone;
+        member.role = role;
+
+        return member;
+    }
 }
